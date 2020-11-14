@@ -1,7 +1,8 @@
 <script>
     import { Router, Route, link } from "svelte-navigator"
     const world = "world" // edit world and save to see hmr update
-    const about = "about" // edit world and save to see hmr update
+    import about from "./about.svelte"
+    import index from "./index.svelte"
 </script>
 
 <style>
@@ -11,9 +12,12 @@
 </style>
 
 <h1>Hello {world}</h1>
-<p>Open App.svelte in your editor and change something to see HMR in actiond</p>
+<p>Open App.svelte in your editor and change something to see HMR in action</p>
 
 <Router>
-    <Route path="about" component="{about}" />
+    <Route path="/">
+        <index></index>
+    </Route>
+    <Route path="/about" ><about></about></Route>
 </Router>
-s
+
